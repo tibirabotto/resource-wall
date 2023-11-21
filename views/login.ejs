@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <style>
+    body {
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #13124f;
+    color: white;
+
+    }
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 32px;
+
+
+
+
+        /* Add any additional styles or modifications here */
+    }
+    span {
+      font-size: 18px;
+    }
+
+    .email_div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      margin-top: 32px;
+
+    }
+
+    .password_div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100vh;
+      margin-top: 32px;
+    }
+
+    input {
+      background-color: transparent;
+      border:none;
+      border-bottom: 2px solid white;
+      outline: none;
+      width: 100%;
+      color: white
+    }
+
+    input:focus {
+      background-color: transparent;
+    }
+    .button_div {
+      display: flex;
+      justify-content: center;
+      margin-top: 64px;
+
+    }
+
+    button {
+      background-color: #7d7cc8;
+      width: 196px;
+      border-radius: 64px;
+      color: white;
+      padding: 4px;
+      font-size: 12px;
+    }
+  </style>
+
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <div class="main">
+    <form action="/user/auth" method="POST">
+      <span>Login</span>
+    <div class="email_div">
+      <label class="email_label" >Email</label>
+      <input type="email" name="email">
+    </div>
+    <div class="password_div">
+      <label class="password_label" >Password</label>
+      <input type="password" name="password">
+    </div>
+    <div class="button_div">
+      <button type="submit">LOGIN</button>
+    </div>
+    </form>
+  </div>
+</body>
+
+</html>
