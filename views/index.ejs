@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
-
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
@@ -18,7 +16,32 @@
 </head>
 
 <body>
-  <h1>Have fun! 🥔</h1>
+  <%- include('partials/_header') -%>
+  <main class="all-resources">
+    <section class="resource">
+      <article class="resource-container">
+        <div class="resource-content">
+          <img src="" alt="resource-photo">
+          <span class="resource-like">❤️</span>
+        </div>
+        <div class="resource-info">
+          <p>Title</p>
+          <p>Description</p>
+        </div>
+        <div class="resource-user-info">
+          <p>@username</p>
+          <p>Time</p>
+        </div>
+        <div class="resource-ratings">
+          <p>☆☆☆☆☆</p>
+        </div>
+        <div class="resource-links">
+          <a href="" class="resource-visit-btn">Visit</a>
+          <a href="" class="resource-more-btn">+More</a>
+        </div>
+      </article>
+    </section>
+  </main>
 </body>
 
 </html>

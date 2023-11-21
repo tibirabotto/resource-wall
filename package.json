@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "local": "./node_modules/.bin/nodemon -L --ignore public/",
-    "db:reset": "node bin/resetdb.js"
+    "db:reset": "node bin/resetdb.js",
+    "compile:sass": "node-sass --output-style compressed -o public/styles/ styles/",
+    "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
+    "dev": "concurrently \"npm run local\" \"npm run watch:sass\""
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
@@ -21,6 +24,8 @@
     "sass": "^1.35.1"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
+    "node-sass": "^9.0.0",
     "nodemon": "^2.0.10"
   }
 }
