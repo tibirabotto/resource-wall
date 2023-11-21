@@ -1,5 +1,4 @@
 # Resource Wall
-=========
 
 
 ## Getting Started
