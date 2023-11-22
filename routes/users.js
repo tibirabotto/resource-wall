@@ -23,6 +23,21 @@ router.get('/register', (req, res) => {
   res.render('register');
 });
 
+// Login page
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+// Edit Page page
+router.get('/edit', (req, res) => {
+  res.render('edit_res');
+});
+
+// Profile Update Page
+router.get('/update-profile', (req, res) => {
+  res.render('update_profile');
+});
+
 
 
 module.exports = router;

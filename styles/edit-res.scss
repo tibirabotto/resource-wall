@@ -4,49 +4,62 @@ main {
   justify-content: center;
 }
 
-.login {
+.edit {
   display: flex;
   flex-direction: column;
   color: white;
-  background-color: #13124F;
+  background-color: #8D8DDA;
   padding: 30px;
   width: 600px;
-  height: 400px;
+  height: 750px;
 }
 
-.login label {
-  color: #ABD9D9;
-  font-weight: lighter;
+.edit label {
+  color: #000235;
+  font-weight: 500;
 }
 
-.login-title {
+.edit-title {
   margin-bottom: 15px;
   position: relative;
 }
 
-.login-title p {
+.edit-title h1 {
+  margin-bottom: 0;
+}
+
+.edit p {
+  margin-top: 0;
+  margin-bottom: 45px;
+}
+
+.edit-title p {
   position: absolute;
   right: 16px;
   top: 0px;
 }
 
-.login-title p:hover {
+.edit-title p:hover {
   opacity: 0.5;
 }
 
-.login-form {
+.edit-form {
   display: flex;
   flex-direction: column;
 }
 
-.login-input {
+.edit-input {
   margin-top: 20px;
   margin-bottom: 35px;
   border-style: hidden;
   border-bottom: 3px solid white;
-  background-color: #13124F;
-  color: white;
+  background-color: #8D8DDA;
+  color: #000235;;
   outline: none;
+}
+
+.img-upload-btn {
+  margin-top: 15px;
 }
 
 .button {
@@ -55,16 +68,16 @@ main {
   justify-content: center;
 }
 
-.login-btn {
-  width: 100px;
-  margin: 5px;
-  padding: 5px 7px;
-  background-color: #8D8DDA;
+.edit-btn {
+  width: 250px;
+  margin: 60px;
+  padding: 10px 7px;
+  background-color: #000235;
   border-radius: 20px;
   border: none;
   color: white;
 }
 
-.login-btn:hover {
+.edit-btn:hover {
   opacity: 0.5;
 }

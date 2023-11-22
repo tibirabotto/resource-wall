@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- External CSS -->
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/edit-res.css" />
+
+  <!-- App JS -->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/users.js"></script>
+</head>
+
+<body>
+  <%- include('partials/_header') -%>
+    <main>
+      <section class="edit">
+        <div class="edit-title">
+          <h1>Edit Resource</h1>
+          <p>X</p>
+        </div>
+        <p>Resource Title</p>
+        <div class="edit-info">
+          <form action="/edit" method="POST" class="edit-form">
+            <label for="title">Title</label>
+            <input class="edit-input" type="text" name="full-name" required>
+            <label for="description">Description</label>
+            <input class="edit-input" type="text" name="description" required>
+            <label for="url">URL</label>
+            <input class="edit-input" type="url" name="url" required>
+            <label for="category">Category</label>
+            <input class="edit-input" type="text" name="category" required>
+            <label for="image">Resource Image</label>
+            <input class="img-upload-btn" type="file" name="image">
+            <div class="button">
+              <button type="submit" class="edit-btn">SAVE CHANGES</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+</body>
+
+</html>
