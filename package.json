@@ -25,10 +25,7 @@
     "sass": "^1.35.1"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "concurrently": "^8.2.2",
-=======
->>>>>>> origin/authentication
     "node-sass": "^9.0.0",
     "nodemon": "^2.0.10"
   }

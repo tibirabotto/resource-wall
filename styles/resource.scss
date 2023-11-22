@@ -1,5 +1,6 @@
 .resource {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .resource-container {
@@ -9,6 +10,7 @@
   width: 280px;
   height: auto;
   color: white;
+  margin-bottom: 40px;
 }
 
 /************* FIRST ROW ************/
@@ -29,7 +31,7 @@
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 28px;
+  font-size: 25px;
 }
 
 .resource-like:hover {
@@ -48,38 +50,9 @@
   font-weight: bold;
   font-size: 18px;
   color: #ABD9D9;
-}
-
-.resource-description {
-  margin: 0;
   text-align: center;
 }
 
-/************* THIRD ROW ************/
-
-.resource-user-info {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-  color: #ABD9D9;
-}
-
-/************* FOURTH ROW ************/
-
-.resource-ratings {
-  display: flex;
-  justify-content: center;
-}
-
-.resource-ratings p {
-  margin: 5px;
-  margin-bottom: 20px;
-}
-
-// Need to implement Rating System
-.resource-ratings p:hover {
-  opacity: 0.5;
-}
 
 /************* FIFTH ROW ************/
 
@@ -87,7 +60,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 10px 0px;
+  margin: 5px 0px;
 }
 
 .resource-links span {
