@@ -52,13 +52,14 @@
 
 .resource-description {
   margin: 0;
+  text-align: center;
 }
 
 /************* THIRD ROW ************/
 
 .resource-user-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 10px;
   color: #ABD9D9;
 }

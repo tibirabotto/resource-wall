@@ -1,0 +1,70 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #13124F;
+  padding: 30px;
+  width: 600px;
+  height: 590px;
+}
+
+.register label {
+  color: #ABD9D9;
+  font-weight: lighter;
+}
+
+.register-title {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.register-title p {
+  position: absolute;
+  right: 16px;
+  top: 0px;
+}
+
+.register-title p:hover {
+  opacity: 0.5;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-input {
+  margin-top: 20px;
+  margin-bottom: 35px;
+  border-style: hidden;
+  border-bottom: 3px solid white;
+  background-color: #13124F;
+  color: white;
+  outline: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-btn {
+  width: 100px;
+  margin: 5px;
+  padding: 5px 7px;
+  background-color: #8D8DDA;
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.register-btn:hover {
+  opacity: 0.5;
+}

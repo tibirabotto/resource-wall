@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- External CSS -->
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/register.css" />
+
+  <!-- App JS -->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/users.js"></script>
+</head>
+
+<body>
+  <%- include('partials/_header') -%>
+    <main>
+      <section class="register">
+        <div class="register-title">
+          <h1>Create Account</h1>
+          <p>X</p>
+        </div>
+        <div class="register-info">
+          <form action="/register" method="POST" class="register-form">
+            <label for="full-name">Full Name</label>
+            <input class="register-input" type="text" name="full-name" required>
+            <label for="username">Username</label>
+            <input class="register-input" type="text" name="username" required>
+            <label for="password">Password</label>
+            <input class="register-input" type="password" name="password" required>
+            <label for="email">Email</label>
+            <input class="register-input" type="email" name="email" required>
+            <div class="button">
+              <button type="submit" class="register-btn">Register</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+</body>
+
+</html>

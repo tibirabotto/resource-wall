@@ -15,16 +15,3 @@ $(() => {
     });
   });
 });
-
-// Replace the "☆" with "★" when hovering
-const stars = document.querySelectorAll('.resource-ratings p');
-
-stars.forEach(star => {
-  star.addEventListener('mouseover', function() {
-    this.innerText = '★';
-  });
-
-  star.addEventListener('mouseout', function() {
-    this.innerText = '☆';
-  });
-});
