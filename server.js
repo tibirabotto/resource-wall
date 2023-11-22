@@ -39,7 +39,7 @@ const authenticationRoutes = require('./routes/authentication');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/user', authenticationRoutes);
+app.use('/login', authenticationRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page

@@ -7,17 +7,15 @@ router.get('/', (req, res) => {
   res.render("login.ejs");
 });
 
-router.post('/auth', (req, res) => {
+router.post('/', (req, res) => {
   const { email, password } = req.body;
   authenticationQueries.login(email, password)
     .then(user => {
-
       if (user) {
         res.redirect("/");
       } else {
-        res.render("login");
+        res.render("login", {message: 'Login/Password invalid'});
       }
-
     })
     .catch(err => {
       res

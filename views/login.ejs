@@ -23,14 +23,10 @@
     }
     .main {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-top: 32px;
-
-
-
-
-        /* Add any additional styles or modifications here */
     }
     span {
       font-size: 18px;
@@ -80,6 +76,10 @@
       padding: 4px;
       font-size: 12px;
     }
+
+    .error {
+      color: red;
+    }
   </style>
 
 
@@ -88,8 +88,14 @@
 </head>
 
 <body>
+
   <div class="main">
-    <form action="/user/auth" method="POST">
+    <% if (typeof message !== 'undefined') { %>
+    <div class="error">
+      <spa><%= message %></spa>
+    </div>
+    <% } %>
+    <form action="/login" method="POST">
       <span>Login</span>
     <div class="email_div">
       <label class="email_label" >Email</label>
