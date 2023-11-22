@@ -4,8 +4,12 @@
       <a href="#">Resource Wall</a>
     </div>
     <div class="navbar-account">
-      <a href="/login" class="navbar-login">Login</a>
-      <a href="/register" class="navbar-register">Register</a>
+      <% if (session)  { %>
+        Welcome: <a href="#"><%= session.email%></a><a href="/logout" class="navbar-login">Logout </a>
+      <% } else { %>
+        <a href="/login" class="navbar-login">Login <%= session.email%></a>
+        <a href="/register" class="navbar-register">Register</a>
+      <% } %>
     </div>
   </div>
   <div class="navbar-second-row">
