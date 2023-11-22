@@ -6,13 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
+  <!-- External CSS -->
+
+  <!-- App CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/resource.css" />
 
+  <!-- App JS -->
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/users.js"></script>
 </head>
 
 <body>
@@ -21,23 +27,27 @@
     <section class="resource">
       <article class="resource-container">
         <div class="resource-content">
-          <img src="" alt="resource-photo">
+          <img src="/images/insert-img.png" alt="resource-photo" class="resource-img">
           <span class="resource-like">❤️</span>
         </div>
         <div class="resource-info">
-          <p>Title</p>
-          <p>Description</p>
+          <p class="resource-title">Title</p>
+          <p class="resource-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa alias, laboriosam excepturi quasi adipisci facere fugit aliquid quo, cum dolor quod tempore cumque veniam labore!</p>
         </div>
         <div class="resource-user-info">
           <p>@username</p>
           <p>Time</p>
         </div>
         <div class="resource-ratings">
-          <p>☆☆☆☆☆</p>
+          <p>☆</p>
+          <p>☆</p>
+          <p>☆</p>
+          <p>☆</p>
+          <p>☆</p>
         </div>
         <div class="resource-links">
-          <a href="" class="resource-visit-btn">Visit</a>
-          <a href="" class="resource-more-btn">+More</a>
+          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
+          <a href="" class="resource-more-btn"><span>➕</span> More</a>
         </div>
       </article>
     </section>

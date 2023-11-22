@@ -13,6 +13,11 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
+// Resource Details Page
+router.get('/details', (req, res) => {
+  res.render('res_details');
+});
+
 
 
 
