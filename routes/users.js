@@ -13,7 +13,15 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
+// Details page
+router.get('/details', (req, res) => {
+  res.render('details');
+});
 
+// Register page
+router.get('/register', (req, res) => {
+  res.render('register');
+});
 
 
 

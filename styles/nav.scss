@@ -1,6 +1,135 @@
-// See: https://sass-lang.com/
+.navbar {
+  background-color: #000235;
+  padding: 20px;
+}
 
-body,
-html {
-  margin: 0;
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/************* FIRST ROW ************/
+
+.navbar-first-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.navbar-account {
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+}
+
+.navbar-account a:hover {
+  opacity: 0.7;
+}
+
+.navbar-account a {
+  margin-left: 10px;
+}
+
+
+/************* SECOND ROW ************/
+
+.navbar-second-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.navbar-categories a {
+  margin-left: 20px;
+}
+
+.navbar-categories a:hover {
+  opacity: 0.7;
+}
+
+
+
+/************* THIRD ROW ************/
+
+.navbar-third-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-search {
+  width: 500px;
+  padding: 5px 25px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ABD9D9;
+  outline: none;
+}
+
+.navbar-more {
+  font-size: 10px;
+  margin-left: 10px;
+  border-radius: 15px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #ABD9D9;
+}
+
+.navbar-more:hover {
+  background-color: #d2dddd;
+}
+
+/* Mobile-friendly media query */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .navbar-first-row {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .navbar-title {
+    position: absolute;
+    margin-right: 10px;
+  }
+
+  .navbar-account {
+    position: absolute;
+    right: 0;
+    margin: 0;
+  }
+
+  .navbar-second-row {
+    margin-bottom: 10px;
+  }
+
+  .navbar-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  .navbar-categories a {
+    margin-bottom: 10px;
+  }
+
+  .navbar-search {
+    width: 400px;
+  }
+
 }
