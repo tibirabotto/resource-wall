@@ -33,6 +33,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const authenticationRoutes = require('./routes/authentication');
 
+const registerRoutes = require('./routes/registration');
 const loginRoutes = require('./routes/login');
 const profileRoutes = require('./routes/profile');
 const myResourceRoutes = require('./routes/my-resource');
@@ -49,6 +50,7 @@ app.use('/users', usersRoutes);
 
 
 app.use('/login', loginRoutes);
+app.use('/register', registerRoutes);
 app.use('/my-resources', myResourceRoutes);
 app.use('/profile', profileRoutes);
 
