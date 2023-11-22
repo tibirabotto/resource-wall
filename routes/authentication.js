@@ -13,7 +13,7 @@ router.post('/auth', (req, res) => {
     .then(user => {
 
       if (user) {
-        res.render("index");
+        res.redirect("/");
       } else {
         res.render("login");
       }
