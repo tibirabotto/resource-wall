@@ -1,0 +1,43 @@
+
+main {
+  margin: 5%;
+}
+
+main h3 {
+  text-align: center;
+}
+
+.resource-container {
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  transition: transform .2s ease;
+}
+
+.resource-container :hover {
+  transform: scale(1.05);
+  cursor: zoom-in;
+}
+
+section > * {
+  margin: 1em 0;
+}
+
+.resource-content {
+  position: relative;
+}
+
+.resource-image {
+  height: 400px;
+  width: 200px;
+  border-radius: 25px;
+}
+
+.resource-like {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 10%;
+}
