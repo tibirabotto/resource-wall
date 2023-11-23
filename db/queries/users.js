@@ -22,7 +22,35 @@ const addUser = async(data) => {
   });
 };
 
-const userByEmail = (email) => {
+const updateUser = async(data, username) => {
+  const { fullName, password, email } = data;
+  const sql = `UPDATE "users" SET "full_name" = $1, "email" = $2, "password" = $3 WHERE "username" = $4;`;
+  const passwordHashed = await bcrypt.hash(password, 10);
+  const values = [fullName, email, passwordHashed, username];
+  return db.query(sql, values).then((data) => {
+    if (data.rows) {
+      return true;
+    } else {
+      return false;
+    }
+  }).catch((e) => {
+    console.log(e);
+  });
+};
+
+const findByEmail = async(email) => {
+  const sql = "SELECT username FROM users WHERE email = $1";
+  const values = [email];
+  return (await db.query(sql, values)).rows[0].username;
+};
+
+const findByUsername = async(username) => {
+  const sql = "SELECT * FROM users WHERE username = $1";
+  const values = [username];
+  return (await db.query(sql, values)).rows[0];
+};
+  
+  const userByEmail = (email) => {
   const query = `SELECT * FROM users WHERE email = $1`;
   const value = [email];
   return new Promise(function(resolve, reject){
@@ -44,6 +72,6 @@ const userByEmail = (email) => {
   // }, function(error) {
   //   return error;
   // });
-};
 
-module.exports = { getUsers, addUser, userByEmail };
+module.exports = { getUsers, addUser, findByEmail, findByUsername, updateUser, userByEmail };
+

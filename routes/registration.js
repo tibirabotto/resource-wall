@@ -6,10 +6,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { email } = req.body;
+  const { username } = req.body;
   usersQueries.addUser(req.body).then(user => {
     if (user) {
-      req.session.email = email;
+      req.session.username = username;
       res.redirect("/");
     } else {
       res.render("register", {message: 'Login/Password invalid'});
