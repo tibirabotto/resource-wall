@@ -10,17 +10,15 @@
   </div>
   <div class="navbar-second-row">
     <div class="navbar-categories">
-      <a href="#">All</a>
-      <a href="#">Category 1</a>
-      <a href="#">Category 2</a>
-      <a href="#">Category 3</a>
-      <a href="#">Category 4</a>
-      <a href="#">Category 5</a>
-      <a href="#">Category 6</a>
+      <a href="#" data-category="all">All</a>
+      <% categories.forEach(category => { %>
+        <a href="#" data-category="<%= category.id %>"><%= category.name %></a>
+      <% }); %>
     </div>
   </div>
   <div class="navbar-third-row">
     <input type="text" class="navbar-search" placeholder="search">
     <button type="submit" class="navbar-more">➕</button>
   </div>
+  <div class="error-message" style="display: none;"></div>
 </header>

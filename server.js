@@ -38,6 +38,10 @@ const profileRoutes = require('./routes/profile');
 const myResourceRoutes = require('./routes/my-resource');
 const newResourceRoutes = require('./routes/new-resource');
 const resourceRoutes = require('./routes/resource');
+const searchRoutes = require('./routes/search');
+const categoriesRoute = require('./routes/categories');
+const indexRoute = require('./routes/index');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -53,7 +57,13 @@ app.use('/my-resources', myResourceRoutes);
 app.use('/profile', profileRoutes);
 
 app.use('/resource/new', newResourceRoutes);
-app.use('/resource/:id', resourceRoutes);
+app.use('/api/resources', resourceRoutes);
+
+app.use('/', searchRoutes);
+app.use('/categories', categoriesRoute);
+app.use('/', indexRoute);
+
+app.use(express.static('public'));
 
 
 // Note: mount other resources here, using the same pattern above
@@ -62,9 +72,6 @@ app.use('/resource/:id', resourceRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

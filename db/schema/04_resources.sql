@@ -7,5 +7,6 @@ CREATE TABLE resources (
   title text NOT NULL,
   description text NOT NULL,
   url text,
-  liked_by text
+  liked_by text,
+  images_url text
 );

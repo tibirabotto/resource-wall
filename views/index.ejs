@@ -19,181 +19,22 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
   <script defer src="/scripts/users.js"></script>
+  <script defer src="/scripts/search.js"></script>
+  <script defer src="/scripts/categories.js"></script>
 </head>
 
 <body>
-  <%- include('partials/_header') -%>
+
+<%- include('partials/_header', { categories: categories }) -%>
   <main class="all-resources">
-    <section class="resource">
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
-      <article class="resource-container">
-        <div class="resource-content">
-          <img src="/images/insert-img.jpeg" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
-        </div>
-        <div class="resource-info">
-          <p class="resource-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="resource-links">
-          <a href="" class="resource-visit-btn"><span>🔗</span> Visit</a>
-          <a href="" class="resource-more-btn"><span>➕</span> More</a>
-        </div>
-      </article>
+    <!-- Search Results Section -->
+    <section class="resource" id="searchResults">
+      <!-- Search results will be displayed here dynamically -->
+    </section>
+
+    <!-- Existing Resource Section -->
+    <section class="resource" id="existingResourceSection">
+
     </section>
   </main>
 </body>
