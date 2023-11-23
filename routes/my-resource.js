@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const myResources = require('../db/queries/myResources');
+const users = require('../db/queries/users');
 
 router.get('/', (req, res) => {
   if(!users.userByEmail(req.session.email)) {
@@ -9,7 +10,7 @@ router.get('/', (req, res) => {
 
   const session = req.session;
 
-  myResources.getMyResources()
+  myResources.getMyResources(req.session.username)
     .then(resources => {
       console.log(resources);
       let templateVars = { resources, session };
