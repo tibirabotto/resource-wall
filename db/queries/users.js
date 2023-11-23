@@ -21,4 +21,10 @@ const addUser = async(data) => {
   });
 };
 
-module.exports = { getUsers, addUser };
+const findByEmail = async(email) => {
+  const sql = "SELECT username FROM users WHERE email = $1";
+  const values = [email];
+  return (await db.query(sql, values)).rows[0].username;
+};
+
+module.exports = { getUsers, addUser, findByEmail };

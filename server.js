@@ -83,7 +83,7 @@ app.use('/resource/:id', resourceRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  if (req.session.email !== undefined) {
+  if (req.session.username !== undefined) {
     const templateVars = { session: req.session };
     res.render('index', templateVars);
   } else {
