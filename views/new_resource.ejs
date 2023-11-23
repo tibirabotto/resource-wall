@@ -28,21 +28,21 @@
           <h1>New Resource</h1>
         </div>
         <div class="register-info">
-          <form action="/" method="POST" class="new-resource-form">
+          <form action="/resource/new" method="POST" class="new-resource-form">
             <label for="title">Title</label>
             <input class="new-resource-input" type="text" name="title" required>
             <label for="username">Description</label>
             <input class="new-resource-input" type="text" name="description" required>
             <label for="url">URL</label>
-            <input class="new-resource-input" type="password" name="url" required>
+            <input class="new-resource-input" type="text" name="url" required>
             <label for="category">Category</label>
-            <select class="new-resource-input" id="category">
+            <select class="new-resource-input" name="category" id="category">
               <% for (let category in categories) { %>
-                <option value=`<%= categories[category].name %>`><%= categories[category].name %></option>
+                <option value='<%= categories[category].id %>'><%= categories[category].name %></option>
               <% } %>
             </select>
-            <label for="image">Select an image (JPEG, PNG, JPG only)</label>
-            <input type="file" id="image" class="new-resource-input" name="image">
+            <label for="image">URL for image</label>
+            <input type="text" id="image" class="new-resource-input" name="image">
             <div class="button">
               <button type="submit" class="new-resource-btn">Post</button>
             </div>
