@@ -1,5 +1,6 @@
 const db = require('../connection');
 const bcrypt = require("bcrypt");
+
 const getUsers = () => {
   return db.query('SELECT * FROM users;')
     .then(data => {
@@ -21,4 +22,16 @@ const addUser = async(data) => {
   });
 };
 
-module.exports = { getUsers, addUser };
+const userByEmail = (email) => {
+  const query = `SELECT * FROM users WHERE email = $1`;
+  const value = [email];
+  return db.query(query, value)
+    .then((data) => {
+      if (data.rows) {
+        return true;
+      }
+      return false;
+    });
+};
+
+module.exports = { getUsers, addUser, userByEmail };
