@@ -1,5 +1,5 @@
 const db = require('../connection');
-
+const bcrypt = require("bcrypt");
 const getUsers = () => {
   return db.query('SELECT * FROM users;')
     .then(data => {
@@ -7,4 +7,18 @@ const getUsers = () => {
     });
 };
 
-module.exports = { getUsers };
+const addUser = async(data) => {
+  const { username, fullName, email, password } = data;
+  const sql = "INSERT INTO users (username, full_name, email, password) VALUES ($1, $2, $3, $4)";
+  const passwordHashed = await bcrypt.hash(password, 10);
+  const values = [username, fullName, email, passwordHashed];
+  return db.query(sql, values).then((data) => {
+    if (data.rows) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+};
+
+module.exports = { getUsers, addUser };
