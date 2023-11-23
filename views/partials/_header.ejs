@@ -5,7 +5,7 @@
     </div>
     <div class="navbar-account">
       <% if (typeof session !== 'undefined')  { %>
-        <a href="#">Welcome, <%= session.email%></a><a href="/logout" class="navbar-login">Logout </a>
+        <a href="#">Welcome, <%= session.username%></a><a href="/logout" class="navbar-login">Logout </a>
       <% } else { %>
         <a href="/login" class="navbar-login">Login</a>
         <a href="/register" class="navbar-register">Register</a>

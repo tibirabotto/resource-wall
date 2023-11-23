@@ -22,16 +22,11 @@ const addUser = async(data) => {
   });
 };
 
-const userByEmail = (email) => {
-  const query = `SELECT * FROM users WHERE email = $1`;
-  const value = [email];
-  return db.query(query, value)
-    .then((data) => {
-      if (data.rows) {
-        return true;
-      }
-      return false;
-    });
+const findByEmail = async(email) => {
+  const sql = "SELECT username FROM users WHERE email = $1";
+  const values = [email];
+  return (await db.query(sql, values)).rows[0].username;
 };
 
-module.exports = { getUsers, addUser, userByEmail };
+module.exports = { getUsers, addUser, findByEmail };
+
