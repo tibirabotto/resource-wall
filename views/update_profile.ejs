@@ -25,20 +25,25 @@
   <%- include('partials/_header') -%>
     <main>
       <section class="register">
+        <% if (typeof message !== 'undefined') { %>
+          <div class="error">
+          <spa><%= message %></spa>
+        </div>
+      <% } %>
         <div class="register-title">
           <h1>Update Profile</h1>
           <p>X</p>
         </div>
         <div class="register-info">
-          <form action="/update-profile" method="POST" class="register-form">
+          <form action="/profile" method="POST" class="register-form">
             <label for="full-name">Full Name</label>
-            <input class="register-input" type="text" name="full-name" required>
+            <input class="register-input" type="text" name="fullName" value="<%= user.full_name%>">
             <label for="username">Username</label>
-            <input class="register-input" type="text" name="username" required>
+            <input class="register-input" type="text" name="username" disabled value="<%= user.username%>" required>
             <label for="password">Password</label>
-            <input class="register-input" type="password" name="password" required>
+            <input class="register-input" type="password" name="password"  >
             <label for="email">Email</label>
-            <input class="register-input" type="email" name="email" required>
+            <input class="register-input" type="email" name="email" value="<%= user.email%>" >
             <div class="button">
               <button type="submit" class="register-btn">Update</button>
             </div>

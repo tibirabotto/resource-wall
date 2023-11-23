@@ -22,5 +22,12 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/', (req, res) => {
+  res.render('details');
+});
+
+router.get('/new', (req, res) => {
+  res.render('details');
+});
 module.exports = router;
 

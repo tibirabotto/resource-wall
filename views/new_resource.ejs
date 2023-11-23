@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- External CSS -->
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/newResource.css" />
+
+  <!-- App JS -->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/new-resource.js"></script>
+</head>
+
+<body>
+  <%- include('partials/_header') -%>
+    <main>
+      <section class="new-resource">
+        <div class="new-resource-title">
+          <h1>New Resource</h1>
+        </div>
+        <div class="register-info">
+          <form action="/resource/new" method="POST" class="new-resource-form">
+            <label for="title">Title</label>
+            <input class="new-resource-input" type="text" name="title" required>
+            <label for="username">Description</label>
+            <input class="new-resource-input" type="text" name="description" required>
+            <label for="url">URL</label>
+            <input class="new-resource-input" type="text" name="url" required>
+            <label for="category">Category</label>
+            <select class="new-resource-input" name="category" id="category">
+              <% for (let category in categories) { %>
+                <option value='<%= categories[category].id %>'><%= categories[category].name %></option>
+              <% } %>
+            </select>
+            <label for="image">URL for image</label>
+            <input type="text" id="image" class="new-resource-input" name="image">
+            <div class="button">
+              <button type="submit" class="new-resource-btn">Post</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+</body>
+
+</html>
