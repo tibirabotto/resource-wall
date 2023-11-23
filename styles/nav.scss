@@ -133,3 +133,16 @@ a {
   }
 
 }
+
+.error-message {
+  opacity: 0.75;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 900;
+  border-radius: 10px;
+  height: 30px;
+  margin: 5px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
