@@ -49,16 +49,13 @@ const findByUsername = async(username) => {
   const values = [username];
   return (await db.query(sql, values)).rows[0];
 };
-  
-  const userByEmail = (email) => {
+
+const userByEmail = (email) => {
   const query = `SELECT * FROM users WHERE email = $1`;
   const value = [email];
   return new Promise(function(resolve, reject){
     db.query(query, value)
       .then((data) => {
-        console.log('IN!: ', JSON.stringify(data.rows));
-        console.log(`Inside userByEmail: ${data.rows}`);
-        // console.log(data.rows[id]);
         if (data.rows) {
           resolve(data.rows);
         }
@@ -66,12 +63,7 @@ const findByUsername = async(username) => {
       })
       .catch(err => console.log(`Error : ${err.message}`));
   });
-  // newPromise.then(function(value){
-  //   console.log('Success!');
-  //   return value;
-  // }, function(error) {
-  //   return error;
-  // });
+}
 
 module.exports = { getUsers, addUser, findByEmail, findByUsername, updateUser, userByEmail };
 
