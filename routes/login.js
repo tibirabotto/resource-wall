@@ -16,11 +16,9 @@ router.get('/', (req, res) => {
 router.post('/', async(req, res) => {
   const { email, password } = req.body;
   const username = await usersQueries.findByEmail(email);
-  console.log(`>>>>>>>> ${username}`);
   authenticationQueries.login(email, password)
     .then(user => {
       if (user) {
-
         req.session.username = username;
         res.redirect("/");
       } else {
