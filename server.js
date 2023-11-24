@@ -80,7 +80,7 @@ app.use('/profile', profileRoutes);
 app.use('/resource/new', newResourceRoutes);
 app.use('/api/resources', resourceRoutes);
 
-app.use('/details/', detailsRoute);
+app.use('/resource/', detailsRoute);
 
 // app.use('/', searchRoutes);
 

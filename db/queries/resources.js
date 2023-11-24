@@ -50,6 +50,22 @@ const getResourceById = async(id) => {
   }
 };
 
+const getCommentsByResource = async(resourceId) => {
+  try {
+    const sql = `select users.username as username, comments.description
+                 from comments
+                 join users
+                 on users.id = comments.comment_by_user_id
+                 join resources
+                 on resources.id = comments.resource_id
+                 where resources.id = $1`;
+    const values = [resourceId];
+    return (await db.query(sql, values)).rows;
+  } catch (e) {
+    console.log(`ERROR: getCategoryByResource ${e}`);
+  }
+};
+
 module.exports = {
-  searchResourcesInDB, getResourcesByCategory, getAllResources, getResourceById
+  searchResourcesInDB, getResourcesByCategory, getAllResources, getResourceById, getCommentsByResource
 };

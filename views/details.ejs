@@ -63,10 +63,16 @@
         <article class="user-resource-comment">
           <div class="user-comment">
             <p class="user-detail-comment">Comments</p>
-            <div class="user-comment-info">
-              <p>@username</p>
-              <p>time</p>
-            </div>
+            <% if (typeof comments !== 'undefined') { %>
+              <% for (let comment of comments) { %>
+                <div class="user-comment-info">
+                  <p><%= comment.username%></p>
+                  <p><%= comment.description%></p>
+                  <p>time</p>
+                </div>
+                <% } %>
+            <% } %>
+
           </div>
         </article>
       </article>

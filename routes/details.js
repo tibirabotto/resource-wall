@@ -5,11 +5,11 @@ const allResources = require('../db/queries/resources');
 
 router.get('/:id', async(req, res) => {
   try {
-    console.log(`IDDDDDDDD ${req.params.id}`);
     const categories = await categoryQueries.getAllCategories();
     const resource = await allResources.getResourceById(req.params.id);
-    console.log(resource);
-    let templateVars = { categories, resource };
+    const comments = await allResources.getCommentsByResource(req.params.id);
+    console.log(comments);
+    let templateVars = { categories, resource, comments };
     res.render('details', templateVars);
   } catch (error) {
     console.error('Error fetching categories:', error);
