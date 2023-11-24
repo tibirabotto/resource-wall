@@ -26,13 +26,6 @@ const createCommentElement = (comment) => {
                 </div>`;
 };
 
-const renderTweets = function () {
-  // loops through tweets
-
-
-
-};
-
 $(document).ready(function () {
   handleSubmit();
 
