@@ -22,6 +22,7 @@
     <script defer src="/scripts/users.js"></script>
     <script defer src="/scripts/search.js"></script>
     <script defer src="/scripts/categories.js"></script>
+    <script defer src="/scripts/comments.js"></script>
   </head>
 <body>
   <%- include('partials/_header') -%>
@@ -55,9 +56,14 @@
           </div>
         </div>
         <div class="details-comment">
-          <p>Comments 💬</p>
-          <input class="details-comment-box" type="text" name="comment" placeholder="Share your thoughts">
-          <button class="comment-btn" type="submit">></button>
+          <form id="form_comment">
+            <p>Comments 💬</p>
+            <input type="hidden" name="resource_id" value="<%= resource.id%>" />
+            <input type="hidden" name="user_id" value="<%= resource.user_id%>" />
+            <input class="details-comment-box" type="text" name="comment" placeholder="Share your thoughts">
+            <button class="comment-btn" type="submit">></button>
+          </form>
+
         </div>
         <article class="user-resource-comment">
           <div class="user-comment">
