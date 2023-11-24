@@ -35,7 +35,7 @@ INSERT INTO resources (
     'freeCodeCamp offers an interactive platform for learning to code. The HTML section includes hands-on coding challenges and projects to reinforce your learning.',
     'https://www.freecodecamp.org/learn/',
     '',
-    'https://upload.wikimedia.org/wikipedia/commons/3/39/FreeCodeCamp_logo.png'
+    'https://www.freecodecamp.org/news/content/images/2021/08/ht-ml.jpeg'
   ),
   (
     3,

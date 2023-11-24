@@ -13,13 +13,61 @@
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/nav.css" />
     <link rel="stylesheet" href="/styles/resource.css" />
+    <link rel="stylesheet" href="/styles/resource.css" />
+    <link rel="stylesheet" href="/styles/details.css" />
 
     <!-- App JS -->
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
     <script defer src="/scripts/users.js"></script>
+    <script defer src="/scripts/search.js"></script>
+    <script defer src="/scripts/categories.js"></script>
   </head>
 <body>
   <%- include('partials/_header') -%>
+  <main>
+    <section class="details">
+      <article class="details-container">
+        <div class="details-img">
+          <img src="https://www.freecodecamp.org/news/content/images/2021/08/ht-ml.jpeg" alt="resource-image">
+        </div>
+        <div class="details-like">
+          <img src="images/heart.png" alt="Like">
+          <p>(num) people like this</p>
+        </div>
+        <div class="details-info">
+          <p class="details-title">Title</p>
+          <p class="details-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni debitis animi eius nesciunt aut iste blanditiis, deleniti illo, excepturi rerum dolorum. Libero optio eaque suscipit odit esse illo tenetur numquam.</p>
+        </div>
+        <div class="details-user-info">
+          <p>Category:</p>
+          <p>URL:</p>
+          <p>Posted By:</p>
+          <p>Added:</p>
+        </div>
+        <div class="details-rate">
+          <p class="detail-rate-name">Rate</p>
+          <div class="details-rate-stars">
+            <p>☆</p>
+            <p>☆</p>
+            <p>☆</p>
+            <p>☆</p>
+            <p>☆</p>
+          </div>
+        </div>
+        <div class="details-comment">
+          <p>Comments</p>
+          <input class="details-comment-box" type="text" name="comment" placeholder="Share your thoughts">
+        </div>
+        <div class="user-comment">
+          <p>Comment</p>
+          <div class="user-comment-info">
+            <p>@username</p>
+            <p>time</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
