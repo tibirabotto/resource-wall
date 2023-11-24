@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
-  <link rel="stylesheet" href="/styles/myResources.css" />
+  <link rel="stylesheet" href="/styles/index.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -23,15 +24,24 @@
 
 <%- include('partials/_header', { categories: categories }) -%>
   <main class="all-resources">
-    <!-- Search Results Section -->
-    <section class="resource" id="searchResults">
-      <!-- Search results will be displayed here dynamically -->
-    </section>
-
-    <!-- Existing Resource Section -->
     <section class="resource" id="existingResourceSection">
-
+    <% for (let resource in resources) { %>
+      <article class="resource-container">
+        <div class="resource-content">
+          <img src="<%= resources[resource].images_url %>" alt="resource-photo" class="resource-img">
+          <img class="resource-like" src="images/heart.png" alt="Like" />
+        </div>
+        <div class="resource-info">
+          <p class="resource-title"><%= resources[resource].title %>}</p>
+        </div>
+        <div class="resource-links">
+          <a href="<%= resources[resource].url %>" class="resource-visit-btn" target="_blank"><span>🔗</span> Visit</a>
+          <a href="/resource/<%= resources[resource].id %>" class="resource-more-btn" target="_blank"><span>➕</span> More</a>
+        </div>
+      </article>
+    <% } %>
     </section>
+    <!-- Existing Resource Section -->
   </main>
 </body>
 
