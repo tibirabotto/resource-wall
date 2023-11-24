@@ -7,9 +7,16 @@ router.get('/', async (req, res) => {
   try {
     const categories = await categoryQueries.getAllCategories();
     const resources = await allResources.getAllResources();
-    console.log({ categories });
-    let templateVars = { categories, resources };
-    res.render('index', templateVars);
+
+    let templateVars = {};
+    if (req.session.username !== undefined) {
+      let session = req.session;
+      templateVars = { categories, resources, session };
+
+      return res.render('index', templateVars);
+    }
+    templateVars = { categories, resources };
+    return res.render('login', templateVars);
   } catch (error) {
     console.error('Error fetching categories:', error);
     res.status(500).json({ error: 'Internal Server Error' });
