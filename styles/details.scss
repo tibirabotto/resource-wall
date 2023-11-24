@@ -44,7 +44,7 @@
 
 .details-title {
   font-weight: bold;
-  font-size: 26px;
+  font-size: 20px;
   color: #ABD9D9;
   text-align: center;
   margin: 10px 0px;
@@ -59,6 +59,10 @@
 .details-user-info {
   margin: 10px;
   margin-top: 30px;
+}
+
+.details-user-info span {
+  color: #8D8DDA;
 }
 
 .details-user-info p {
@@ -109,7 +113,7 @@
   border: 1px solid white;
   border-right: #BFBEEA;
   border-radius: 5px;
-  width: 571px;
+  width: 550px;
   padding: 10px 14px;
   color: white;
 }
@@ -131,6 +135,7 @@
   flex-direction: column;
   background-color: #8D8DDA;
   margin: 8px;
+  width: 560px;
   padding: 20px;
   border-radius: 15px;
 }

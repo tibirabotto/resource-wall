@@ -35,7 +35,7 @@ function getAllResources() {
 
 const getResourceById = async(id) => {
   try {
-    const sql = `SELECT resources.*, categories.name as category_name, users.username as username
+    const sql = `SELECT resources.*, categories.name as category_name, users.username as username, users.id as user_id
                  FROM resources
                  JOIN categories
                  ON categories.id = resources.category_id
@@ -80,6 +80,33 @@ const likedResources = async(userId) => {
   }
 };
 
+const getCommetById = async(id) => {
+  try {
+    const sql = `select users.username as username, comments.description
+                 from comments
+                 join users
+                 on users.id = comments.comment_by_user_id
+                 where comments.id = $1`;
+    const values = [id];
+    return (await db.query(sql, values)).rows;
+  } catch(e) {
+    console.log(`ERROR: getCommetById ${e}`);
+  }
+}
+
+const addCommentByResource = async(data) => {
+  try {
+    const { resource_id, user_id, comment } = data;
+    const sql = `INSERT INTO comments (resource_id, comment_by_user_id, description) VALUES ($1, $2, $3) RETURNING id;`;
+    const values = [resource_id, user_id, comment];
+    const comment_id = (await db.query(sql, values)).rows[0].id;
+    return await getCommetById(comment_id);
+  } catch(e) {
+    console.log(`ERROR: addCommentByResource ${e}`);
+  }
+
+}
+
 module.exports = {
-  searchResourcesInDB, getResourcesByCategory, getAllResources, getResourceById, getCommentsByResource, likedResources
+  searchResourcesInDB, getResourcesByCategory, getAllResources, getResourceById, getCommentsByResource, addCommentByResource, likedResources
 };
