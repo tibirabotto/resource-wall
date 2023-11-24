@@ -4,16 +4,13 @@
   flex-wrap: wrap;
 }
 .resource-container {
-  border: 2px solid #8D8DDA;
+  background-color: #13124F;
   border-radius: 10px;
   padding: 20px;
   width: 280px;
-  height: fit-content;
+  height: auto;
   color: white;
   margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
 
 /** FIRST ROW **/
