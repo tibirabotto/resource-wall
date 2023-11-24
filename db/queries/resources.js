@@ -33,6 +33,23 @@ function getAllResources() {
     });
 }
 
+const getResourceById = async(id) => {
+  try {
+    const sql = `SELECT resources.*, categories.name as category_name, users.username as username
+                 FROM resources
+                 JOIN categories
+                 ON categories.id = resources.category_id
+                 JOIN users
+                 ON users.id = resources.user_id
+                 WHERE resources.id = $1`;
+
+    const values = [id];
+    return (await db.query(sql, values)).rows[0];
+  } catch (e) {
+    console.log(`ERROR: getResourceByID ${e}`);
+  }
+};
+
 module.exports = {
-  searchResourcesInDB, getResourcesByCategory, getAllResources
+  searchResourcesInDB, getResourcesByCategory, getAllResources, getResourceById
 };

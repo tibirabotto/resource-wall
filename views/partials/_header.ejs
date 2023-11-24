@@ -15,9 +15,11 @@
   <div class="navbar-second-row">
     <div class="navbar-categories">
       <a href="#" data-category="all">All</a>
-      <% categories.forEach(category => { %>
-        <a href="#" data-category="<%= category.id %>"><%= category.name %></a>
-      <% }); %>
+      <% if (typeof categories !== 'undefined') { %>
+        <% categories.forEach(category => { %>
+         <a href="#" data-category="<%= category.id %>"><%= category.name %></a>
+        <% }); %>
+      <% } %>
     </div>
   </div>
   <div class="navbar-third-row">
