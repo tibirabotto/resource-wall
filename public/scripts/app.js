@@ -11,8 +11,16 @@ $(document).ready(function(){
       method: "GET",
       url: "/api/users/username",
       dataType: 'json',
+      cache: false,
+      success: function(data) {
+        console.log('Success!', data);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error('AJAX error:', textStatus, errorThrown);
+      }
     })
-    .then(data => {
+    .then(function(data) {
+      console.log(`Users: ${bool}, ${data.users.id}, ${resource_id}`);
       let user_id = data.users.id;
       $.ajax({
         method: "GET",
@@ -24,13 +32,12 @@ $(document).ready(function(){
           resource_id: resource_id
         }
       })
-      // .then(data => console.log(`JSON data: line 32: ${JSON.stringify(data)}`))
-      .then((data) => {
+      .then(function(data){
         console.log(`Inside app line 29: ${JSON.stringify(data)}`);
         if (bool) {
-          $(this).attr("src", "images/redHeart.png");
+          $(`#${resource_id}`).attr("src", "images/redHeart.png");
         } else {
-          $(this).attr("src", "images/redHeart.png");
+          $(`#${resource_id}`).attr("src", "images/heart.png");
         }
       })
       .catch(err => console.log(`Error liking the article!`))

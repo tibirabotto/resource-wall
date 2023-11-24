@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
         .then(resources => {
             const session = req.session;
             templateVars = { resources, session };
-            
+
             res.redirect('../my-resources');
           })
           .catch(err => {
