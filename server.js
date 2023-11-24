@@ -62,7 +62,7 @@ const indexRoute = require('./routes/index');
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/', indexRoute);
 app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
+app.use('/api/liked', widgetApiRoutes);
 
 app.use('/users', usersRoutes);
 
@@ -82,22 +82,6 @@ app.use('/api/resources', resourceRoutes);
 // app.use('/', searchRoutes);
 
 app.use(express.static('public'));
-
-
-// Note: mount other resources here, using the same pattern above
-
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
-
-app.get('/', (req, res) => {
-  if (req.session.username !== undefined) {
-    const templateVars = { session: req.session };
-    res.render('index', templateVars);
-  } else {
-    res.render("login.ejs");
-  }
-});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
