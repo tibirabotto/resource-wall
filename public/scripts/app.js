@@ -3,6 +3,7 @@ $(document).ready(function(){
   //Like button
   $(".resource-like").click(function(){
     let resource_id = $(this).attr('id');
+    console.log(`REsource_id: ${resource_id}`);
     let bool = false;
     if ($(this).attr("src") === "images/heart.png") {
       bool = true;
@@ -11,16 +12,9 @@ $(document).ready(function(){
       method: "GET",
       url: "/api/users/username",
       dataType: 'json',
-      cache: false,
-      success: function(data) {
-        console.log('Success!', data);
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.error('AJAX error:', textStatus, errorThrown);
-      }
+      cache: false
     })
     .then(function(data) {
-      console.log(`Users: ${bool}, ${data.users.id}, ${resource_id}`);
       let user_id = data.users.id;
       $.ajax({
         method: "GET",
@@ -33,7 +27,6 @@ $(document).ready(function(){
         }
       })
       .then(function(data){
-        console.log(`Inside app line 29: ${JSON.stringify(data)}`);
         if (bool) {
           $(`#${resource_id}`).attr("src", "images/redHeart.png");
         } else {

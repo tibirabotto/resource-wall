@@ -10,10 +10,7 @@ router.get('/', async (req, res) => {
     const resources = await allResources.getAllResources();
 
     let templateVars = {};
-    // console.log(`Resources: ${JSON.stringify(resources)}`);
-    resources.forEach(resource => {
-      console.log(`Liked by: ${resource.liked_by}`);
-    })
+
     if (req.session.username !== undefined) {
       let session = req.session;
       const newRes = await likedResources.likedResources(req.session.username);

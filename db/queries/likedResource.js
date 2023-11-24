@@ -24,7 +24,7 @@ const likedResource = (bool, user_id, resource_id) => {
       return data.rows;
     })
     .catch(err => {
-      console.log(`Error fetching data : ${err}`);
+      console.log(`Error fetching liked data in likedResource : ${err}`);
     });
 };
 
