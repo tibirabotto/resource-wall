@@ -40,10 +40,9 @@
           <p class="details-description"><%= resource.description%></p>
         </div>
         <div class="details-user-info">
-          <p>Category: <%= resource.category_name%></p>
-          <p>URL:</p>
-          <p>Posted By: <%= resource.username %></p>
-          <p>Added:</p>
+          <p><span>Category:</span> <%= resource.category_name%></p>
+          <a href="<%= resource.url%>"><span>URL:</span> <%= resource.url%></a>
+          <p><span>Posted By:</span> <%= resource.username %></p>
         </div>
         <div class="details-rate">
           <p class="detail-rate-name">Rate</p>
@@ -62,12 +61,11 @@
         </div>
         <article class="user-resource-comment">
           <div class="user-comment">
-            <p class="user-detail-comment">Comments</p>
             <% if (typeof comments !== 'undefined') { %>
-              <% for (let comment of comments) { %>
+            <% for (let comment of comments) { %>
+            <p class="user-detail-comment"><i><%= comment.description%></i></p>
                 <div class="user-comment-info">
                   <p><%= comment.username%></p>
-                  <p><%= comment.description%></p>
                   <p>time</p>
                 </div>
                 <% } %>
