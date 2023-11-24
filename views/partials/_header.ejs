@@ -4,7 +4,7 @@
       <% if (typeof session !== 'undefined')  { %>
       <div class="navbar-extra">
         <a class="extra-link" href="../resource/new">Create New</a>
-        <a href="../my-resources">My resources</a>
+        <a class="extra-link" href="../my-resources">My resources</a>
       </div>
       <div class="navbar-title">
         <a href="../">Resource Wall</a>
@@ -14,7 +14,6 @@
         <a href="/logout" class="navbar-login">Logout </a>
       </div>
     </div>
-    <!-- Added the following two lines to include navbar-second-row and navbar-third-row when the user is logged in -->
     <div class="navbar-second-row">
       <% if (typeof categories !== 'undefined') { %>
         <div class="navbar-categories">
