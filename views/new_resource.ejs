@@ -11,13 +11,11 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/newResource.css" />
 
   <!-- App JS -->
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/new-resource.js"></script>
 </head>
 
 <body>
@@ -41,8 +39,8 @@
                 <option value='<%= categories[category].id %>'><%= categories[category].name %></option>
               <% } %>
             </select>
-            <label for="image">URL for image</label>
-            <input type="text" id="image" class="new-resource-input" name="image">
+            <label for="images_url">URL for image</label>
+            <input type="text" id="image" class="new-resource-input" name="images_url" required>
             <div class="button">
               <button type="submit" class="new-resource-btn">Post</button>
             </div>

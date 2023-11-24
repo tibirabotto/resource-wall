@@ -1,12 +1,20 @@
 <header class="navbar">
   <div class="navbar-first-row">
+    <% if (typeof session !== 'undefined')  { %>
+    <div class="navbar-extra">
+      <a href="../resource/new">Create New</a>
+      <a href="../my-resources">My resources</a>
+    </div>
     <div class="navbar-title">
-      <a href="#">Resource Wall</a>
+      <a href="../">Resource Wall</a>
     </div>
     <div class="navbar-account">
-      <% if (typeof session !== 'undefined')  { %>
         <a href="/profile/<%= session.username%>">Welcome, <%= session.username%></a><a href="/logout" class="navbar-login">Logout </a>
       <% } else { %>
+      <div class="navbar-title">
+        <a href="#">Resource Wall</a>
+      </div>
+      <div class="navbar-account">
         <a href="/login" class="navbar-login">Login</a>
         <a href="/register" class="navbar-register">Register</a>
       <% } %>

@@ -47,10 +47,10 @@ router.post('/', (req, res) => {
     description = req.body.description;
     url = req.body.url;
     category_id = req.body.category;
-    image = req.body.image;
+    images_url = req.body.images_url;
 
     console.log(`Line 53! ${user_id}, ${title}, ${description}, ${url}, ${category_id}`);
-    newResource.setResource(user_id, category_id, title, description, url, image)
+    newResource.setResource(user_id, category_id, title, description, url, images_url)
     .then(data => {
       console.log(`Line 59: ${JSON.stringify(data)}`);
       if (data[0].id) {
@@ -58,7 +58,13 @@ router.post('/', (req, res) => {
         .then(resources => {
             const session = req.session;
             templateVars = { resources, session };
-            res.render('my_resources', templateVars);
+            // $.ajax({
+            //   method: 'GET',
+            //   url: '/my-resources'
+            // })
+            // .then(data => console.log(`Success on new resource: ${JSON.stringify(data)}`))
+            // .catch(err => console.log(`Cannot get myresource page`))
+            res.redirect('../my-resources');
           })
           .catch(err => {
             res
