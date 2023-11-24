@@ -54,13 +54,13 @@ const myResourceRoutes = require('./routes/my-resource');
 const newResourceRoutes = require('./routes/new-resource');
 const resourceRoutes = require('./routes/resource');
 const searchRoutes = require('./routes/search');
-const categoriesRoute = require('./routes/categories');
 const indexRoute = require('./routes/index');
 
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
+app.use('/', indexRoute);
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 
@@ -79,9 +79,7 @@ app.use('/profile', profileRoutes);
 app.use('/resource/new', newResourceRoutes);
 app.use('/api/resources', resourceRoutes);
 
-app.use('/', searchRoutes);
-app.use('/categories', categoriesRoute);
-app.use('/', indexRoute);
+// app.use('/', searchRoutes);
 
 app.use(express.static('public'));
 
