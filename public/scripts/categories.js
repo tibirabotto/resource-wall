@@ -1,8 +1,6 @@
 $(document).ready(function () {
-  console.log('here');
 
     const categoryLinks = document.querySelectorAll('.navbar-categories a');
-    console.log(categoryLinks);
 
     categoryLinks.forEach(link => {
       link.addEventListener('click', function (event) {

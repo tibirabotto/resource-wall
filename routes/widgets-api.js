@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
   console.log('Params:', req.query.bool, req.query.user_id, req.query.resource_id);
   likedResource.likedResource(req.query.bool, req.query.user_id, req.query.resource_id)
     .then(data => {
-      console.log(`DAta from likes: ${JSON.stringify(data)}`);
       return res.json({ data });
     })
     .catch(err => {
