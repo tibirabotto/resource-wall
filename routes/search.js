@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const resourceQueries = require('../db/queries/resources');
 
-router.get('/search', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const searchQuery = req.query.query;
     const searchResults = await resourceQueries.searchResourcesInDB(searchQuery);
