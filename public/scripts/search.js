@@ -6,6 +6,7 @@ $(document).ready(function () {
       dataType: 'json',
       success: function (results) {
         // Display the search results
+        console.log(`Result: ${results}`);
         displaySearchResults(results);
         // Check if no search results were found
         if (results.length === 0) {
@@ -27,7 +28,7 @@ $(document).ready(function () {
       <article class="resource-container">
         <div class="resource-content">
           <img src="${result.images_url}" alt="resource-photo" class="resource-img">
-          <span class="resource-like">❤️</span>
+          <img class="resource-like" src="images/heart.png" alt="Like" id="${ result.id }" />
         </div>
         <div class="resource-info">
           <p class="resource-title">${result.title}</p>

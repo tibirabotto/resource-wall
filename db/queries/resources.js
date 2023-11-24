@@ -3,7 +3,7 @@ const db = require('../connection');
 async function searchResourcesInDB(searchQuery) {
   try {
     const result = await db.query(
-      'SELECT r.*, i.image FROM resources r LEFT JOIN images i ON r.id = i.resource_id WHERE r.title ILIKE $1 OR r.description ILIKE $1',
+      'SELECT * FROM resources r WHERE title LIKE $1 OR description LIKE $1',
       ['%' + searchQuery + '%']
     );
 
