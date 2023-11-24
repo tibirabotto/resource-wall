@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/index.css" />
   <link rel="stylesheet" href="/styles/resource.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -25,6 +25,9 @@
 
 <%- include('partials/_header', { categories: categories }) -%>
   <main class="all-resources">
+    <section class="resource" id="searchResults">
+      <!-- Search results will be displayed here dynamically -->
+    </section>
     <section class="resource" id="existingResourceSection">
     <% for (let resource in resources) { %>
       <article class="resource-container">
@@ -33,7 +36,7 @@
           <img class="resource-like" src="images/heart.png" alt="Like" id="<%= resources[resource].id %>" />
         </div>
         <div class="resource-info">
-          <p class="resource-title"><%= resources[resource].title %>}</p>
+          <p class="resource-title"><%= resources[resource].title %></p>
         </div>
         <div class="resource-links">
           <a href="<%= resources[resource].url %>" class="resource-visit-btn" target="_blank"><span>🔗</span> Visit</a>

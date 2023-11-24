@@ -82,7 +82,7 @@ app.use('/api/resources', resourceRoutes);
 
 app.use('/resource/', detailsRoute);
 
-// app.use('/', searchRoutes);
+app.use('/', searchRoutes);
 
 app.use(express.static('public'));
 

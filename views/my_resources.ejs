@@ -26,7 +26,7 @@
       <% for (let resource in resources) { %>
         <article class="resource-container">
           <div class="resource-content">
-            <img class="resource-image" src="/images/1.jpeg" alt="resource-photo">
+            <img class="resource-image" src="<%= resources[resource].images_url %>" alt="resource-photo">
             <img class="resource-like" src="images/heart.png" alt="Like" />
           </div>
         </article>
