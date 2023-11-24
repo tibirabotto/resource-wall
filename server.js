@@ -55,7 +55,7 @@ const newResourceRoutes = require('./routes/new-resource');
 const resourceRoutes = require('./routes/resource');
 const searchRoutes = require('./routes/search');
 const indexRoute = require('./routes/index');
-const detailsRoute = require('./routes/details')
+const detailsRoute = require('./routes/details');
 
 
 // Mount all resource routes
@@ -80,7 +80,7 @@ app.use('/profile', profileRoutes);
 app.use('/resource/new', newResourceRoutes);
 app.use('/api/resources', resourceRoutes);
 
-app.use('/details', detailsRoute)
+app.use('/details/', detailsRoute);
 
 // app.use('/', searchRoutes);
 

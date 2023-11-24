@@ -29,20 +29,20 @@
     <section class="details">
       <article class="details-container">
         <div class="details-img">
-          <img src="https://www.freecodecamp.org/news/content/images/2021/08/ht-ml.jpeg" alt="resource-image">
+          <img src="<%= resource.images_url%>" alt="resource-image">
         </div>
         <div class="details-like">
           <img src="images/heart.png" alt="Like">
           <p>(num) people like this</p>
         </div>
         <div class="details-info">
-          <p class="details-title">Title</p>
-          <p class="details-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni debitis animi eius nesciunt aut iste blanditiis, deleniti illo, excepturi rerum dolorum. Libero optio eaque suscipit odit esse illo tenetur numquam.</p>
+          <p class="details-title"><%= resource.title%></p>
+          <p class="details-description"><%= resource.description%></p>
         </div>
         <div class="details-user-info">
-          <p>Category:</p>
+          <p>Category: <%= resource.category_name%></p>
           <p>URL:</p>
-          <p>Posted By:</p>
+          <p>Posted By: <%= resource.username %></p>
           <p>Added:</p>
         </div>
         <div class="details-rate">
