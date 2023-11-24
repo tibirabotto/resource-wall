@@ -66,6 +66,20 @@ const getCommentsByResource = async(resourceId) => {
   }
 };
 
+const likedResources = async(userId) => {
+  try {
+    const sql = `SELECT l.resource_id
+      FROM liked_resources_by_user l
+        JOIN users u
+        ON u.id = l.user_id
+      WHERE u.username = $1;`
+    const values = [ userId ];
+    return (await db.query(sql, values)).rows;
+  } catch (e) {
+    console.log(`ERROR: likedResources ${e}`);
+  }
+};
+
 module.exports = {
-  searchResourcesInDB, getResourcesByCategory, getAllResources, getResourceById, getCommentsByResource
+  searchResourcesInDB, getResourcesByCategory, getAllResources, getResourceById, getCommentsByResource, likedResources
 };

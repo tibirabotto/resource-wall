@@ -11,10 +11,13 @@ DELETE FROM liked_resources_by_user WHERE user_id = $1 AND resource_id = $2 RETU
 const likedResource = (bool, user_id, resource_id) => {
   let values = [ user_id, resource_id ];
   let query = '';
-  if(bool) {
+  console.log(`Bool: ${bool}`);
+  if(bool === 'true') {
     query = query1;
+  } else {
+    query = query2;
   }
-  query = query2;
+  console.log(`Query: ${query}\n Values: ${values}`);
   return db.query(query, values)
     .then(function(data) {
       console.log(`Likedresource output: ${data.rows}`);
