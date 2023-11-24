@@ -1,38 +1,44 @@
 <header class="navbar">
   <div class="navbar-first-row">
-    <% if (typeof session !== 'undefined')  { %>
-    <div class="navbar-extra">
-      <a href="../resource/new">Create New</a>
-      <a href="../my-resources">My resources</a>
-    </div>
-    <div class="navbar-title">
-      <a href="../">Resource Wall</a>
-    </div>
-    <div class="navbar-account">
-        <a href="/profile/<%= session.username%>">Welcome, <%= session.username%></a><a href="/logout" class="navbar-login">Logout </a>
-      <% } else { %>
+    <div class="navbar-initial">
+      <% if (typeof session !== 'undefined')  { %>
+      <div class="navbar-extra">
+        <a class="extra-link" href="../resource/new">Create New</a>
+        <a href="../my-resources">My resources</a>
+      </div>
       <div class="navbar-title">
-        <a href="#">Resource Wall</a>
+        <a href="../">Resource Wall</a>
       </div>
       <div class="navbar-account">
-        <a href="/login" class="navbar-login">Login</a>
-        <a href="/register" class="navbar-register">Register</a>
-      <% } %>
+        <a class="navbar-welcome" href="/profile/<%= session.username%>">Welcome <%= session.username%> 👋</a>
+        <a href="/logout" class="navbar-login">Logout </a>
+      </div>
     </div>
-  </div>
-  <div class="navbar-second-row">
-    <div class="navbar-categories">
-      <a href="#" data-category="all">All</a>
-      <% if (typeof categories !== 'undefined') { %>
-        <% categories.forEach(category => { %>
-         <a href="#" data-category="<%= category.id %>"><%= category.name %></a>
-        <% }); %>
-      <% } %>
+    <!-- Added the following two lines to include navbar-second-row and navbar-third-row when the user is logged in -->
+    <div class="navbar-second-row">
+      <div class="navbar-categories">
+        <a href="#" data-category="all">All</a>
+        <% if (typeof categories !== 'undefined') { %>
+          <% categories.forEach(category => { %>
+            <a href="#" data-category="<%= category.id %>"><%= category.name %></a>
+          <% }); %>
+        <% } %>
+      </div>
     </div>
-  </div>
-  <div class="navbar-third-row">
-    <input type="text" class="navbar-search" placeholder="search">
-    <button type="submit" class="navbar-more">➕</button>
+    <div class="navbar-third-row">
+      <input type="text" class="navbar-search" placeholder="search">
+      <button type="submit" class="navbar-more">➕</button>
+    </div>
+    <% } else { %>
+    <div class="navbar-title">
+      <a href="#">Resource Wall</a>
+    </div>
+    <div class="navbar-account">
+      <a href="/login" class="navbar-login">Login</a>
+      <a href="/register" class="navbar-register">Register</a>
+    </div>
+    <% } %>
   </div>
   <div class="error-message" style="display: none;"></div>
 </header>
+

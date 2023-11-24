@@ -11,27 +11,35 @@ a {
 /************* FIRST ROW ************/
 
 .navbar-first-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // position: relative;
   margin-bottom: 30px;
   margin-top: 20px;
 }
-.navbar-extra {
-  font-size: 16px;
-  font-weight: bold;
-  justify-content: space-between;
+
+.navbar-initial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
 }
+
+.navbar-extra {
+  justify-content: space-between;
+  margin: 0;
+  position: absolute;
+  left: 0;
+}
+
 .navbar-title {
   font-size: 24px;
   font-weight: bold;
-  // position: absolute;
+  position: absolute;
 }
 
 .navbar-account {
-  margin-right: 20px;
-  // position: absolute;
+  position: absolute;
+  right: 0;
+  margin: 0;
 }
 
 .navbar-account a:hover {
@@ -42,6 +50,13 @@ a {
   margin-left: 10px;
 }
 
+.extra-link {
+  margin-right: 15px;
+}
+
+.navbar-welcome {
+  margin-right: 15px;
+}
 
 /************* SECOND ROW ************/
 
