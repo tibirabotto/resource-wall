@@ -1,16 +1,17 @@
 const db = require('../connection');
 
 const query = `
-  SELECT images.image, title, username, description, rating_id, url
-    FROM resources
-      JOIN users ON resources.user_id = users.id
-      JOIN images ON resources.id = images.resource_id
-    WHERE resources.user_id = 1;
+  SELECT r.images_url, r.title, u.username, r.description, r.ratings, r.url
+    FROM resources AS r
+      JOIN users AS u ON r.user_id = u.id
+    WHERE u.username = $1;
 `;
 
-const getMyResources = () => {
-  return db.query(query)
+const getMyResources = (username) => {
+  let value = [ username ];
+  return db.query(query, value)
     .then(data => {
+      console.log(`Inside myResource:`, data.rows);
       return data.rows;
     })
     .catch(err => {

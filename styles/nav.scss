@@ -12,23 +12,26 @@ a {
 
 .navbar-first-row {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
+  // position: relative;
   margin-bottom: 30px;
   margin-top: 20px;
 }
-
+.navbar-extra {
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: space-between;
+}
 .navbar-title {
   font-size: 24px;
   font-weight: bold;
-  position: absolute;
+  // position: absolute;
 }
 
 .navbar-account {
   margin-right: 20px;
-  position: absolute;
-  right: 0;
+  // position: absolute;
 }
 
 .navbar-account a:hover {
