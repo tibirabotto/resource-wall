@@ -58,12 +58,7 @@ router.post('/', (req, res) => {
         .then(resources => {
             const session = req.session;
             templateVars = { resources, session };
-            // $.ajax({
-            //   method: 'GET',
-            //   url: '/my-resources'
-            // })
-            // .then(data => console.log(`Success on new resource: ${JSON.stringify(data)}`))
-            // .catch(err => console.log(`Cannot get myresource page`))
+            
             res.redirect('../my-resources');
           })
           .catch(err => {
