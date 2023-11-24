@@ -15,14 +15,14 @@
       </div>
     </div>
     <div class="navbar-second-row">
-      <div class="navbar-categories">
-        <a href="#" data-category="all">All</a>
-        <% if (typeof categories !== 'undefined') { %>
+      <% if (typeof categories !== 'undefined') { %>
+        <div class="navbar-categories">
+          <a href="#" data-category="all">All</a>
           <% categories.forEach(category => { %>
             <a href="#" data-category="<%= category.id %>"><%= category.name %></a>
           <% }); %>
+        </div>
         <% } %>
-      </div>
     </div>
     <div class="navbar-third-row">
       <input type="text" class="navbar-search" placeholder="search">

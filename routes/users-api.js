@@ -23,15 +23,17 @@ router.get('/', (req, res) => {
 });
 
 router.get('/username', (req, res) => {
-  // console.log(`Request: ${req.session.username}`);
+  console.log(`Request: ${req.session.username}`);
   userQueries.findByUsername(req.session.username)
     .then(users => {
-      res.json({ users });
+      console.log(`Inside users-api: ${typeof users}`);
+      return res.json({ users }); // Note the 'return' here
     })
     .catch(err => {
-      res
+      console.error('Error querying database:', err);
+      return res
         .status(500)
-        .json({ error: err.message });
+        .json({ error: err.message }); // And also here
     });
 });
 
