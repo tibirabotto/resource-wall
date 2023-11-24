@@ -10,13 +10,10 @@ $(document).ready(function () {
 
         const category = this.getAttribute('data-category');
 
-        // Make an AJAX request to fetch resources for the selected category
-        // Update the content of the 'searchResults' section with the fetched resources
         fetch(`/api/resources?category=${category}`)
           .then(response => response.json())
           .then(resources => {
             console.log(resources);
-            // Assuming you have a function to update the content of the search results section
             updateSearchResults(resources);
           })
           .catch(error => console.error('Error fetching resources:', error));
